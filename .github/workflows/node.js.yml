@@ -31,15 +31,10 @@ jobs:
     - run: npm test
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v2
-  
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy app              
-        with:
-            # Name of the Azure Web App
-            app-name: team7webapp
-            # Applies to Web App only: Publish profile (*.publishsettings) file contents with Web Deploy secrets
-            publish-profile: TEAM7WEBAPPSTAGINGPROFILE
-            # Enter an existing Slot other than the Production slot
-            slot-name: STAGING            
+      with:
+        # Name of the Azure Web App
+        app-name: team7webapp
+        # Applies to Web App only: Publish profile (*.publishsettings) file contents with Web Deploy secrets
+        publish-profile: TEAM7WEBAPPSTAGINGPROFILE
+        # Enter an existing Slot other than the Production slot
+        slot-name: STAGING            
